@@ -192,8 +192,39 @@
 </div></section>
 
 <section class="block" id="projects"><div class="wrap">
-  <div class="label">Open-source projects</div>
+  <div class="label">Projects</div>
   <div class="cards">
+    <div class="card">
+      <span class="tag">Orbital mechanics</span>
+      <h3 class="serif">SATRADAR</h3>
+      <p>Every active satellite in orbit, live in a browser tab. Each object is
+      described by eight numbers; propagating all sixteen thousand of them takes
+      about nine milliseconds in a web worker, so there is no backend and
+      nothing to call. I built it because in this domain a wrong number looks
+      exactly like a right one, so most of the work went into being able to tell
+      the difference.</p>
+      <div class="stack">TypeScript · three.js · SGP4 via satellite.js · Web Worker · static, no backend · 188 tests · refreshed daily by GitHub Actions</div>
+      <div class="links"><a href="https://satradar-411.pages.dev" target="_blank" rel="noopener">satradar-411.pages.dev →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag">Developer tools</span>
+      <h3 class="serif">Claude Usage</h3>
+      <p>A menu-bar app showing live Claude usage: the five-hour session window,
+      weekly and per-model limits, with burn-rate projections and cost
+      estimates. I built it because the alternative was refreshing a web page to
+      find out whether I was going to run out halfway through a task.</p>
+      <div class="stack">Electron · macOS menu bar · Windows installer · signs in once, runs at login</div>
+    </div>
+    <div class="card">
+      <span class="tag">Clinical research</span>
+      <h3 class="serif">trialgalaxy</h3>
+      <p>Every registered clinical trial, around forty thousand of them, mapped
+      and filterable in the browser. Built to make the trial landscape for a
+      condition something you can look at rather than something you have to
+      query.</p>
+      <div class="stack">TypeScript · client-side filtering over an 8.9 MB payload · served static</div>
+      <div class="links"><a href="https://mvp-trialgalaxy.pages.dev" target="_blank" rel="noopener">mvp-trialgalaxy.pages.dev →</a></div>
+    </div>
     <div class="card">
       <span class="tag">Market intelligence</span>
       <h3 class="serif">Pulseboard</h3>
