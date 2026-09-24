@@ -5,20 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TrialGalaxy — every clinical trial as a map</title>
 <meta name="description" content="A zoomable map of 40,084 phased interventional clinical trials from ClinicalTrials.gov, clustered by what they study. Search a condition or drug, and colour by phase or status.">
+<link rel="canonical" href="https://euanbrown08.github.io/trialgalaxy/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://euanbrown08.github.io/trialgalaxy/">
 <meta property="og:title" content="TrialGalaxy — every clinical trial as a map">
 <meta property="og:description" content="A zoomable map of 40,084 phased interventional clinical trials from ClinicalTrials.gov, clustered by what they study. Search a condition or drug, and colour by phase or status.">
-<meta property="og:image" content="https://euanbrown08.github.io/images/share/trialgalaxy.jpg">
+<meta name="image" property="og:image" content="https://euanbrown08.github.io/images/share/trialgalaxy.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
 <meta name="twitter:card" content="summary_large_image">
-<!-- Share page: link-preview crawlers read the tags above (they don't run
-     scripts); people are sent straight on to the live app. -->
-<script>location.replace("https://mvp-trialgalaxy.pages.dev/");</script>
-<style>body{background:#faf9f6;color:#14202e;font:16px/1.6 -apple-system,"Helvetica Neue",Arial,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;padding:16px;text-align:center}a{color:#7a2e2e}</style>
+<style>
+  :root { --ink: #14202e; --ink-soft: #4a5768; --paper: #faf9f6; --rule: #dcd9d0; --accent: #7a2e2e; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--paper); color: var(--ink); font: 16px/1.65 -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+  .serif { font-family: Georgia, "Times New Roman", serif; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 700px) { .wrap { padding: 0 24px; } }
+  nav { border-bottom: 1px solid var(--rule); }
+  nav .wrap { display: flex; align-items: center; height: 58px; }
+  nav a { color: var(--ink); text-decoration: none; font-weight: 650; }
+  nav a.back { margin-left: auto; font-weight: 400; font-size: 13.5px; color: var(--ink-soft); }
+  header { padding: 56px 0 28px; }
+  .tag { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  h1 { font-size: clamp(34px, 6vw, 50px); line-height: 1.08; margin-top: 14px; }
+  .lede { font-size: 19px; color: var(--ink-soft); margin-top: 16px; max-width: 660px; }
+  .btn { display: inline-block; margin-top: 24px; padding: 12px 20px; border-radius: 8px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
+  .btn:hover { background: #642525; }
+  .shot { display: block; margin: 12px 0 34px; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: #0b0d12; }
+  .shot img { display: block; width: 100%; height: auto; }
+  .body p { color: var(--ink-soft); max-width: 680px; }
+  .body p + p { margin-top: 14px; }
+  .stack { font-size: 13.5px; color: var(--ink-soft); margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--rule); }
+  footer { padding: 40px 0 50px; font-size: 13px; color: var(--ink-soft); }
+  footer a { color: var(--ink); }
+</style>
 </head>
 <body>
-<p>Opening <a href="https://mvp-trialgalaxy.pages.dev/">TrialGalaxy — every clinical trial as a map</a>…</p>
+<nav><div class="wrap">
+  <a class="serif" href="/">Euan Brown</a>
+  <a class="back" href="/#projects">← All projects</a>
+</div></nav>
+<main class="wrap">
+  <header>
+    <div class="tag">Clinical research</div>
+    <h1 class="serif">trialgalaxy</h1>
+    <p class="lede">A zoomable map of 40,084 phased interventional clinical trials from ClinicalTrials.gov, clustered by what they study. Search a condition or drug, and colour by phase or status.</p>
+    <a class="btn" href="https://mvp-trialgalaxy.pages.dev">Open trialgalaxy →</a>
+  </header>
+  <a class="shot" href="https://mvp-trialgalaxy.pages.dev"><img src="/images/projects/trialgalaxy.jpg" alt="trialgalaxy map of 40,084 clinical trials clustered by what they study, coloured by phase"></a>
+  <div class="body">
+    <p>Every registered clinical trial, around forty thousand of them, mapped and filterable in the browser.</p>
+    <p>Built to make the trial landscape for a condition something you can look at rather than something you have to query.</p>
+    <p class="stack">TypeScript · client-side filtering over an 8.9 MB payload · served static</p>
+  </div>
+</main>
+<footer><div class="wrap">Built by <a href="/">Euan Brown</a> · <a href="https://www.linkedin.com/in/euan-brown-eb08">LinkedIn</a></div></footer>
 </body>
 </html>
