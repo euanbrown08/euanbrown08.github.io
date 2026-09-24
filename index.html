@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Euan Brown · founder &amp; analyst, business × health</title>
-<meta name="description" content="Euan Brown: founder of Rewind Mods, incoming Business and Health MSci at UCL, building tools and writing analysis on healthtech markets.">
+<meta name="description" content="Euan Brown: founder of RewindMods, incoming Business and Health MSci at UCL. Healthtech, investing, consulting and the software I build along the way.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://euanbrown08.github.io/">
 <meta property="og:title" content="Euan Brown · business × health">
@@ -47,6 +47,7 @@
     color: var(--accent); font-weight: 600; margin-bottom: 18px;
   }
   h1 { font-size: clamp(34px, 6vw, 54px); line-height: 1.08; letter-spacing: -0.015em; font-weight: 640; }
+  @media (max-width: 600px) { h1 br { display: none; } }
   .hero p.lede { margin-top: 22px; font-size: 19px; color: var(--ink-soft); max-width: 620px; }
   .hero .facts { margin-top: 30px; display: flex; gap: 26px; flex-wrap: wrap; font-size: 13.5px; color: var(--ink-soft); }
   .hero .facts span b { color: var(--ink); font-weight: 600; }
@@ -76,10 +77,6 @@
   .card .links a:hover { border-bottom-color: var(--ink); }
   .stack { font-size: 12.5px; color: var(--ink-soft); margin-top: 12px; }
 
-  .research { display: grid; grid-template-columns: 1.1fr 1fr; gap: 34px; align-items: start; }
-  .research img { width: 100%; border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
-  @media (max-width: 720px) { .research { grid-template-columns: 1fr; } }
-  .finding { font-size: 15px; padding-left: 16px; border-left: 3px solid var(--accent); margin: 16px 0; }
 
   .essay { padding: 26px 0; border-top: 1px solid var(--rule); }
   .essay:first-of-type { border-top: 0; padding-top: 6px; }
@@ -161,22 +158,34 @@
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="kicker">London · Business × Health</div>
-  <h1 class="serif">Building at the intersection of<br>business and health.</h1>
+  <div class="kicker">London · healthtech · investing · building</div>
+  <h1 class="serif">From investment memos<br>to satellite trackers.</h1>
   <p class="lede">I'm Euan Brown, incoming Business and Health MSci at UCL. I
   founded and ran RewindMods, an international watch modification company, for
-  2 years, and now I build open-source tools and write analysis on healthtech
-  markets, working towards a career in venture and impact investing.</p>
+  2 years, and now I build projects people actually use, write about and analyse
+  healthtech markets, and research how AI systems get hijacked, working towards
+  a career in venture and impact investing.</p>
   <div class="facts">
     <span><b>Founder</b> · RewindMods, 2024 – 2026</span>
     <span><b>Incoming MSci</b> · Business and Health, UCL</span>
-    <span><b>Focus</b> · healthtech, venture, data tools</span>
+    <span><b>Latest</b> · showcasing at Claude Founder House</span>
   </div>
 </div></header>
 
 <section class="block" id="experience"><div class="wrap">
   <div class="label">Experience</div>
   <div class="essay" style="padding-top:6px;">
+    <h3 class="serif">neuRealities · Edtech &amp; Healthtech</h3>
+    <div class="meta">2026 · product &amp; building</div>
+    <p>Started by sitting in on how the company takes an idea from concept to
+    build, alongside its 3D designers and business leads, and how the creative
+    and commercial sides have to line up before anything gets made. Then I was
+    given a week to build an edtech app from scratch:
+    <a class="plain" href="#satquest">SAT Quest</a>, an SAT study app, covering
+    the design, the question logic and the study features, scoped to get every
+    core feature working for the first MVP review.</p>
+  </div>
+  <div class="essay">
     <h3 class="serif">AXA Investment Managers · Impact Global Health</h3>
     <div class="meta">2025 · impact venture investing</div>
     <p>Worked with the Global Health impact team, taking calls with
@@ -207,6 +216,15 @@
     <p>Worked alongside portfolio managers and market strategists, learning
     hedge fund operations, debt trading and the risk frameworks used by family
     offices and institutional investors.</p>
+  </div>
+  <div class="essay">
+    <h3 class="serif">Arbitrage Group · Short-let Property</h3>
+    <div class="meta">2026 · real estate operations</div>
+    <p>Helped get properties ready for guests, seeing the operational side of
+    what actually drives a booking. Audited the company's ratings and reviews
+    across Airbnb and Booking.com, grouped guest complaints by theme rather than
+    by property to surface the problems that kept recurring, and turned them
+    into low-cost recommendations to lift ratings.</p>
   </div>
   <div class="essay">
     <h3 class="serif">Freelance · AI Evaluation &amp; Data Annotation</h3>
@@ -242,6 +260,16 @@
       candidates. In active development.</p>
       <div class="stack">Python backend · Firebase · role-based access control · LLM evaluation</div>
     </div>
+    <div class="card">
+      <span class="tag">Founder · health AI · in progress</span>
+      <h3 class="serif">Harbor</h3>
+      <p>A private space to think things through: a conversational companion
+      grounded in evidence-based techniques like reflective listening and CBT,
+      running a language model entirely on your own machine so nothing you say
+      leaves it. Not therapy, and not trying to be. Very early and changing
+      week to week.</p>
+      <div class="stack">Runs fully offline · encrypted on-device memory · early development</div>
+    </div>
   </div>
 </div></section>
 
@@ -269,7 +297,7 @@
       weekly and per-model limits, with burn-rate projections and cost
       estimates. I built it because the alternative was refreshing a web page to
       find out whether I was going to run out halfway through a task.</p>
-      <div class="stack">Electron · macOS menu bar · Windows installer · signs in once, runs at login</div>
+      <div class="stack">Electron · macOS menu bar · signs in once, runs at login · free</div>
       <div class="links"><a href="https://claudeusagemonitor.pages.dev" target="_blank" rel="noopener">claudeusagemonitor.pages.dev · download for Mac →</a></div>
     </div>
     <div class="card">
@@ -283,57 +311,48 @@
       <div class="stack">TypeScript · client-side filtering over an 8.9 MB payload · served static</div>
       <div class="links"><a href="https://mvp-trialgalaxy.pages.dev" target="_blank" rel="noopener">mvp-trialgalaxy.pages.dev →</a></div>
     </div>
-    <div class="card">
-      <span class="tag">Market intelligence</span>
-      <h3 class="serif">Pulseboard</h3>
-      <p>A healthtech catalyst tracker that merges three public data streams,
-      SEC filings, ClinicalTrials.gov study updates and funding news, into a
-      single feed for a watchlist of digital health companies. I built it
-      because following early-stage healthtech means watching three websites
-      that never talk to each other.</p>
-      <div class="stack">Python · FastAPI · SQLite · public APIs, no keys · tested offline via fixtures</div>
-      <div class="links"><a href="https://github.com/euanbrown08/pulseboard" target="_blank" rel="noopener">github.com/euanbrown08/pulseboard →</a></div>
+    <div class="card" id="satquest">
+      <a class="shot" href="https://sat-quest.euanb08.workers.dev" target="_blank" rel="noopener"><img src="images/projects/satquest.jpg" alt="SAT Quest home screen with a day streak, level, match formats and a challenge code" loading="lazy"></a>
+      <span class="tag">Edtech · built at neuRealities</span>
+      <h3 class="serif">SAT Quest</h3>
+      <p>A 1v1 SAT game: you and a friend get the same question at the same time
+      and race for it. Four match formats, room codes, a live scoreboard, streaks,
+      and a graphing calculator for the maths section. Built from scratch in a
+      week as my internship project at neuRealities.</p>
+      <div class="stack">JavaScript · Cloudflare Workers · a Durable Object per live match room · built in one week</div>
+      <div class="links"><a href="https://sat-quest.euanb08.workers.dev" target="_blank" rel="noopener">Play SAT Quest →</a></div>
     </div>
     <div class="card">
-      <span class="tag">Research code</span>
-      <h3 class="serif">finsent-baselines</h3>
-      <p>The fully reproducible benchmark suite behind my research note on
-      financial sentiment classification. Seven models, one protocol,
-      deterministic results, run it and you get the same tables I publish.</p>
-      <div class="stack">Python · scikit-learn · 5-fold CV · seed-fixed</div>
-      <div class="links"><a href="https://github.com/euanbrown08/finsent-baselines" target="_blank" rel="noopener">github.com/euanbrown08/finsent-baselines →</a><a href="#research">Findings ↓</a></div>
+      <a class="shot" href="https://github.com/euanbrown08/vitals" target="_blank" rel="noopener"><img src="images/projects/vitals.jpg" alt="Vitals catalyst feed listing the latest clinical-trial updates for a healthtech watchlist" loading="lazy"></a>
+      <span class="tag">Market intelligence</span>
+      <h3 class="serif">Vitals</h3>
+      <p>The vital signs of a healthtech watchlist. The things that move a
+      position, SEC filings, clinical-trial updates and funding news, live on
+      three websites that never talk to each other. Vitals checks all three and
+      merges them into one dated feed you can read at a glance.</p>
+      <div class="stack">Python · FastAPI · SQLite · public APIs, no keys · tested offline via fixtures</div>
+      <div class="links"><a href="https://github.com/euanbrown08/vitals" target="_blank" rel="noopener">github.com/euanbrown08/vitals →</a></div>
     </div>
   </div>
 </div></section>
 
 <section class="block" id="research"><div class="wrap">
   <div class="label">Research</div>
-  <div class="research">
-    <div>
-      <h2 class="serif">How much model do you need?</h2>
-      <p style="font-size:13.5px; margin-bottom:12px;">Independent research note · July 2026</p>
-      <p>A systematic baseline study on the Financial PhraseBank: a ladder of
-      seven classifiers, from a majority-class baseline and the
-      Loughran–McDonald dictionary up to a small neural network, all under one
-      cross-validation protocol.</p>
-      <p class="finding"><b>The finding:</b> label agreement moves accuracy by
-      around 11 points, while model capacity at this scale moves it by roughly
-      zero. A linear SVM reaches 89.3% on cleanly labelled data, within 8
-      points of published FinBERT results at a small fraction of the compute,
-      and above GPT-4's published few-shot accuracy on this dataset.</p>
-      <p style="font-size:14px;">Methods, limitations and every number are in
-      the paper, and the repo reproduces it end to end.
-      <a class="plain" href="https://github.com/euanbrown08/finsent-baselines" target="_blank" rel="noopener">Paper &amp; code on GitHub</a></p>
-    </div>
-    <img src="images/finsent-accuracy.png" alt="Macro-F1 across the model ladder on both label-agreement variants of the Financial PhraseBank">
-  </div>
-  <div class="soon">
+  <div class="soon" style="margin-top:0;">
     <span class="tag">Working paper · coming soon</span>
-    <h3 class="serif">Prompt injection in AI systems</h3>
-    <p>A research paper on prompt injection: how instructions hidden in
-    untrusted content, such as web pages, documents and tool outputs, can take
-    over the behaviour of language models and the agents built on them, and
-    which defences actually hold up.</p>
+    <h3 class="serif">Prompt injection in small-model AI systems</h3>
+    <p>A lot of AI products now run on smaller, cheaper models to keep costs
+    down. This paper looks at how exposed those systems are to prompt injection,
+    where instructions hidden in the content a model reads end up steering what
+    it does.</p>
+  </div>
+  <div class="soon" style="margin-top:16px;">
+    <span class="tag">Sister paper · coming soon</span>
+    <h3 class="serif">Making small models robust to prompt injection</h3>
+    <p>The follow-up: practical ways to make smaller models harder to hijack.
+    The argument behind both papers is simple. Every model can be injected, big
+    or small, so guardrails should be standard practice in any AI system rather
+    than an afterthought.</p>
   </div>
 </div></section>
 
@@ -408,24 +427,21 @@
   Common Ground magazine.</p>
   <div class="carousel" aria-roledescription="carousel" aria-label="Photography">
     <div class="track" tabindex="0">
-      <figure><img src="images/photography/01.jpg" alt="Snow-covered alpine peaks and a glacier valley, with a wooden bench on a grassy ledge in the foreground"></figure>
-      <figure><img src="images/photography/02.jpg" alt="Turquoise cove below a cliffside town, framed by trees" loading="lazy"></figure>
-      <figure><img src="images/photography/03.jpg" alt="Radar dome tower on a snowy summit against a pink and violet dusk sky" loading="lazy"></figure>
-      <figure><img src="images/photography/04.jpg" alt="Black and white front view of a classic Aston Martin DB5" loading="lazy"></figure>
+      <figure><img src="images/photography/08.jpg" alt="Milky Way above silhouetted treetops"></figure>
       <figure><img src="images/photography/05.jpg" alt="Black and white lone tree reflected in a puddle on open moorland" loading="lazy"></figure>
-      <figure><img src="images/photography/06.jpg" alt="Black and white cat asleep on a red corrugated roof" loading="lazy"></figure>
-      <figure><img src="images/photography/07.jpg" alt="Pink flowering branches reaching over a calm sea" loading="lazy"></figure>
-      <figure><img src="images/photography/08.jpg" alt="Milky Way above silhouetted treetops" loading="lazy"></figure>
-      <figure><img src="images/photography/09.jpg" alt="Waves breaking on a dark sand beach, seen from above" loading="lazy"></figure>
-      <figure><img src="images/photography/10.jpg" alt="Jagged snow-capped mountain peak under a hazy sky" loading="lazy"></figure>
-      <figure><img src="images/photography/11.jpg" alt="Long-exposure waterfall cascading between green woodland" loading="lazy"></figure>
-      <figure><img src="images/photography/12.jpg" alt="Green-speckled lizard on a sunlit rock" loading="lazy"></figure>
+      <figure><img src="images/photography/03.jpg" alt="Radar dome tower on a snowy summit against a pink and violet dusk sky" loading="lazy"></figure>
+      <figure><img src="images/photography/02.jpg" alt="Turquoise cove below a cliffside town, framed by trees" loading="lazy"></figure>
       <figure><img src="images/photography/14.jpg" alt="Touring cars racing on a circuit lined with pine trees" loading="lazy"></figure>
+      <figure><img src="images/photography/07.jpg" alt="Pink flowering branches reaching over a calm sea" loading="lazy"></figure>
+      <figure><img src="images/photography/12.jpg" alt="Green-speckled lizard on a sunlit rock" loading="lazy"></figure>
+      <figure><img src="images/photography/11.jpg" alt="Long-exposure waterfall cascading between green woodland" loading="lazy"></figure>
+      <figure><img src="images/photography/01.jpg" alt="Snow-covered alpine peaks and a glacier valley, with a wooden bench on a grassy ledge in the foreground" loading="lazy"></figure>
+      <figure><img src="images/photography/10.jpg" alt="Jagged snow-capped mountain peak under a hazy sky" loading="lazy"></figure>
       <figure><img src="images/photography/15.jpg" alt="Ski lift pylons over a sunlit snowy plateau with mountains beyond" loading="lazy"></figure>
     </div>
     <button class="arrow prev" type="button" aria-label="Previous photo">‹</button>
     <button class="arrow next" type="button" aria-label="Next photo">›</button>
-    <div class="count" aria-live="polite">1 / 14</div>
+    <div class="count" aria-live="polite">1 / 11</div>
   </div>
   <div class="thumbs" aria-label="Choose a photo"></div>
 </div></section>
