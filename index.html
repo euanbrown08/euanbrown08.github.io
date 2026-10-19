@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237a2e2e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23faf9f6'%3EE%3C/text%3E%3C/svg%3E">
 <title>Euan Brown · founder &amp; analyst, business × health</title>
-<meta name="description" content="Euan Brown: founder of RewindMods, incoming Business and Health MSci at UCL. Healthtech, investing, consulting and the software I build along the way.">
+<meta name="description" content="Euan Brown: founder of RewindMods, Business and Health MSci at UCL. Healthtech, investing, consulting and the software I build along the way.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://euanbrown08.github.io/">
 <meta property="og:title" content="Euan Brown · business × health">
-<meta property="og:description" content="Founder of RewindMods, incoming Business and Health MSci at UCL. Projects, research, writing and photography.">
+<meta property="og:description" content="Founder of RewindMods, Business and Health MSci at UCL, ICAIF '26 author. Projects, research, writing and photography.">
 <meta property="og:image" content="https://euanbrown08.github.io/images/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -21,6 +23,20 @@
     --paper-2: #f1efe9;
     --rule: #dcd9d0;
     --accent: #7a2e2e;     /* oxblood */
+    --card: #fff;
+    --veil: rgba(250, 249, 246, 0.92);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e9e6df;
+      --ink-soft: #a8adb5;
+      --paper: #13161b;
+      --paper-2: #1b1f26;
+      --rule: #2b3039;
+      --accent: #e0907c;
+      --card: #191d23;
+      --veil: rgba(19, 22, 27, 0.9);
+    }
   }
   * { box-sizing: border-box; margin: 0; }
   html { scroll-behavior: smooth; }
@@ -33,7 +49,7 @@
 
   nav {
     position: sticky; top: 0; z-index: 5;
-    background: rgba(250, 249, 246, 0.92); backdrop-filter: blur(6px);
+    background: var(--veil); backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--rule);
   }
   nav .wrap { display: flex; align-items: center; gap: 22px; height: 58px; overflow-x: auto; white-space: nowrap; }
@@ -66,7 +82,7 @@
 
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
   .card {
-    background: #fff; border: 1px solid var(--rule); border-radius: 8px;
+    background: var(--card); border: 1px solid var(--rule); border-radius: 8px;
     padding: 24px 26px;
   }
   .card .tag { font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
@@ -101,6 +117,19 @@
   .soon h3 { margin-top: 8px; }
   .soon p { font-size: 14.5px; margin-top: 8px; max-width: 680px; }
 
+  .accepted {
+    padding: 26px 28px; border: 1px solid var(--accent); border-radius: 8px;
+    background: var(--card); position: relative;
+  }
+  .accepted .tag { font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .accepted h3 { font-size: 21px; margin-top: 10px; line-height: 1.3; }
+  .accepted p { font-size: 15px; margin-top: 10px; max-width: 700px; }
+  .accepted .when { font-size: 13.5px; color: var(--ink); margin-top: 14px; }
+  .pill {
+    display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
+    color: var(--accent); border: 1px solid var(--accent); border-radius: 20px; padding: 1px 9px;
+  }
+
   /* photography carousel: native horizontal scroll-snap, so swipe works on touch */
   .carousel { position: relative; }
   .carousel .track {
@@ -116,10 +145,10 @@
   .carousel .arrow {
     position: absolute; top: 50%; transform: translateY(-50%);
     width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--rule);
-    background: rgba(250, 249, 246, 0.9); color: var(--ink); font-size: 20px; line-height: 1;
+    background: var(--veil); color: var(--ink); font-size: 20px; line-height: 1;
     cursor: pointer; display: flex; align-items: center; justify-content: center;
   }
-  .carousel .arrow:hover { background: #fff; }
+  .carousel .arrow:hover { background: var(--card); }
   .carousel .arrow.prev { left: 12px; }
   .carousel .arrow.next { right: 12px; }
   .carousel .count {
@@ -159,22 +188,29 @@
 
 <header class="hero"><div class="wrap">
   <div class="kicker">London · healthtech · investing · building</div>
-  <h1 class="serif">From investment memos<br>to satellite trackers.</h1>
-  <p class="lede">I'm Euan Brown, incoming Business and Health MSci at UCL. I
+  <h1 class="serif">From investment memos <br>to satellite trackers.</h1>
+  <p class="lede">I'm Euan Brown, a first-year Business and Health MSci student at UCL. I
   founded and ran RewindMods, an international watch modification company, for
   2 years, and now I build projects people actually use, write about and analyse
   healthtech markets, and research how AI systems get hijacked, working towards
   a career in venture and impact investing.</p>
   <div class="facts">
     <span><b>Founder</b> · RewindMods, 2024 – 2026</span>
-    <span><b>Incoming MSci</b> · Business and Health, UCL</span>
-    <span><b>Latest</b> · showcasing at Claude Founder House</span>
+    <span><b>MSci</b> · Business and Health, UCL</span>
+    <span><b>First-year rep</b> · UCL Asset Management</span>
+    <span><b>Latest</b> · <a class="plain" href="#research">paper accepted at ICAIF '26</a></span>
   </div>
 </div></header>
 
 <section class="block" id="experience"><div class="wrap">
   <div class="label">Experience</div>
   <div class="essay" style="padding-top:6px;">
+    <h3 class="serif">UCL Asset Management · First-Year Representative</h3>
+    <div class="meta">2026 – present · student investment society <span class="pill">Now</span></div>
+    <p>Representing first-year members of UCL Asset Management, the
+    university's student investment society.</p>
+  </div>
+  <div class="essay">
     <h3 class="serif">neuRealities · Edtech &amp; Healthtech</h3>
     <div class="meta">2026 · product &amp; building</div>
     <p>Started by sitting in on how the company takes an idea from concept to
@@ -299,6 +335,7 @@
       find out whether I was going to run out halfway through a task.</p>
       <div class="stack">Electron · macOS menu bar · signs in once, runs at login · free</div>
       <div class="links"><a href="https://claudeusagemonitor.pages.dev" target="_blank" rel="noopener">claudeusagemonitor.pages.dev · download for Mac →</a></div>
+      <div class="stack"><b id="cu-downloads">155</b> downloads and counting</div>
     </div>
     <div class="card">
       <a class="shot" href="https://mvp-trialgalaxy.pages.dev" target="_blank" rel="noopener"><img src="images/projects/trialgalaxy.jpg" alt="trialgalaxy map of 40,084 clinical trials clustered by what they study, coloured by phase" loading="lazy"></a>
@@ -338,16 +375,19 @@
 
 <section class="block" id="research"><div class="wrap">
   <div class="label">Research</div>
-  <div class="soon" style="margin-top:0;">
-    <span class="tag">Working paper · coming soon</span>
-    <h3 class="serif">Prompt injection in small-model AI systems</h3>
-    <p>A lot of AI products now run on smaller, cheaper models to keep costs
-    down. This paper looks at how exposed those systems are to prompt injection,
-    where instructions hidden in the content a model reads end up steering what
-    it does.</p>
+  <div class="accepted">
+    <span class="tag">Accepted · ICAIF '26 · Milan</span>
+    <h3 class="serif">Unflagged and Obeyed: Prompt Injection Through Small Models in LLM Financial Pipelines</h3>
+    <p>Accepted at the Financial AI Security, Privacy, and Safety workshop at
+    ICAIF '26, the ACM International Conference on AI in Finance. Financial
+    firms increasingly hand documents they don't control to small, low-cost
+    models whose output feeds bigger models, analysts and agents. The paper
+    tests how far a single planted sentence can move those models' stock
+    ratings, and whether the models themselves notice.</p>
+    <p class="when"><b>Poster</b> · Bocconi University, Milan · 15 November 2026</p>
   </div>
   <div class="soon" style="margin-top:16px;">
-    <span class="tag">Sister paper · coming soon</span>
+    <span class="tag">Sister paper · in progress</span>
     <h3 class="serif">Making small models robust to prompt injection</h3>
     <p>The follow-up: practical ways to make smaller models harder to hijack.
     The argument behind both papers is simple. Every model can be injected, big
@@ -359,6 +399,13 @@
 <section class="block" id="speaking"><div class="wrap">
   <div class="label">Speaking &amp; showcases</div>
   <div class="essay" style="padding-top:6px;">
+    <h3 class="serif">ICAIF '26 · ACM International Conference on AI in Finance</h3>
+    <div class="meta">15 November 2026 · poster · Milan <span class="pill">Upcoming</span></div>
+    <p>Presenting <a class="plain" href="#research">Unflagged and Obeyed</a>, my
+    paper on prompt injection through small models in financial pipelines, at
+    the Financial AI Security, Privacy, and Safety workshop.</p>
+  </div>
+  <div class="essay">
     <h3 class="serif">Claude Founder House</h3>
     <div class="meta">September 2026 · showcase</div>
     <p>Showcased the projects I've been building with Claude, including
@@ -489,6 +536,16 @@
   });
   track.addEventListener('scroll', function () { window.requestAnimationFrame(update); });
   update();
+})();
+
+// Live Claude Usage download count; keeps the number in the HTML if it can't load.
+(function () {
+  var el = document.getElementById('cu-downloads');
+  if (!el || !window.fetch) return;
+  fetch('https://claudeusagemonitor.pages.dev/api/downloads')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) { if (d && typeof d.count === 'number' && d.count > 0) el.textContent = d.count.toLocaleString('en-GB'); })
+    .catch(function () {});
 })();
 </script>
 
