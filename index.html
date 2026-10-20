@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237a2e2e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23faf9f6'%3EE%3C/text%3E%3C/svg%3E">
 <title>Euan Brown · founder &amp; analyst, business × health</title>
 <meta name="description" content="Euan Brown: founder of RewindMods, Business and Health MSci at UCL. Healthtech, investing, consulting and the software I build along the way.">
@@ -25,18 +25,6 @@
     --accent: #7a2e2e;     /* oxblood */
     --card: #fff;
     --veil: rgba(250, 249, 246, 0.92);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #e9e6df;
-      --ink-soft: #a8adb5;
-      --paper: #13161b;
-      --paper-2: #1b1f26;
-      --rule: #2b3039;
-      --accent: #e0907c;
-      --card: #191d23;
-      --veil: rgba(19, 22, 27, 0.9);
-    }
   }
   * { box-sizing: border-box; margin: 0; }
   html { scroll-behavior: smooth; }
@@ -81,6 +69,9 @@
   a.plain:hover { border-bottom-color: var(--accent); }
 
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+  .cards.three { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .cards.three .card { padding: 22px 22px; }
+  @media (max-width: 820px) { .cards.three { grid-template-columns: 1fr; } }
   .card {
     background: var(--card); border: 1px solid var(--rule); border-radius: 8px;
     padding: 24px 26px;
@@ -125,6 +116,10 @@
   .accepted h3 { font-size: 21px; margin-top: 10px; line-height: 1.3; }
   .accepted p { font-size: 15px; margin-top: 10px; max-width: 700px; }
   .accepted .when { font-size: 13.5px; color: var(--ink); margin-top: 14px; }
+  .badge {
+    display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--accent);
+    background: rgba(122, 46, 46, 0.07); border-radius: 6px; padding: 4px 10px;
+  }
   .pill {
     display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
     color: var(--accent); border: 1px solid var(--accent); border-radius: 20px; padding: 1px 9px;
@@ -199,16 +194,33 @@
     <span><b>MSci</b> · Business and Health, UCL</span>
     <span><b>First-year rep</b> · UCL Asset Management</span>
     <span><b>Latest</b> · <a class="plain" href="#research">paper accepted at ICAIF '26</a></span>
+    <span><b>Best demo</b> · <a class="plain" href="#speaking">Claude Founder House</a></span>
   </div>
 </div></header>
 
 <section class="block" id="experience"><div class="wrap">
   <div class="label">Experience</div>
   <div class="essay" style="padding-top:6px;">
+    <h3 class="serif">Venture Cooperative · Laconia Capital</h3>
+    <div class="meta">2026 – present · Venture Fellow, Cohort 11 · New York, remote <span class="pill">Now</span></div>
+    <p>A fellowship run with Laconia Capital: weekly sessions on the legal,
+    financial and portfolio-construction sides of venture capital, plus Laconia
+    office hours. I help source early-stage startups for Laconia's pipeline,
+    focusing on AI in healthcare.</p>
+  </div>
+  <div class="essay">
     <h3 class="serif">UCL Asset Management · First-Year Representative</h3>
     <div class="meta">2026 – present · student investment society <span class="pill">Now</span></div>
     <p>Representing first-year members of UCL Asset Management, the
     university's student investment society.</p>
+  </div>
+  <div class="essay">
+    <h3 class="serif">Freelance · AI Evaluation &amp; Analysis</h3>
+    <div class="meta">2026 – present · multiple AI research platforms <span class="pill">Now</span></div>
+    <p>Designing financial-planning assessment scenarios, with full input
+    datasets and grading rubrics, to benchmark large language models, and
+    evaluating AI-generated code against real-world quantitative trading
+    repositories.</p>
   </div>
   <div class="essay">
     <h3 class="serif">neuRealities · Edtech &amp; Healthtech</h3>
@@ -262,14 +274,6 @@
     by property to surface the problems that kept recurring, and turned them
     into low-cost recommendations to lift ratings.</p>
   </div>
-  <div class="essay">
-    <h3 class="serif">Freelance · AI Evaluation &amp; Data Annotation</h3>
-    <div class="meta">2026 – present · AI consulting</div>
-    <p>Building financial-planning evaluation scenarios and grading guidelines
-    for LLM benchmarking, and assessing AI-generated code against
-    production-grade quantitative trading repositories to evaluate agentic
-    coding performance.</p>
-  </div>
   <p style="font-size:13.5px; margin-top:18px;">Also: team coordinator for the
   UK &amp; Europe Restructuring Competition (finals at Imperial College London,
   March 2026), and The American School in London, Class of 2026.</p>
@@ -277,17 +281,7 @@
 
 <section class="block" id="ventures"><div class="wrap">
   <div class="label">Ventures</div>
-  <div class="cards">
-    <div class="card">
-      <span class="tag">Founder · e-commerce · 2024 – 2026</span>
-      <h3 class="serif">RewindMods</h3>
-      <p>An international watch modification company I founded in August 2024
-      and ran solo for 2 years, modifying the Omega × Swatch MoonSwatch
-      in-house for the affordable-luxury gap. Product development, the
-      modifications themselves, marketing, web development, sourcing,
-      fulfilment and bookkeeping, all one pair of hands. Wound down in 2026 as
-      I turned towards university and new projects.</p>
-    </div>
+  <div class="cards three">
     <div class="card">
       <span class="tag">Co-builder · B2B SaaS</span>
       <h3 class="serif">CVAI</h3>
@@ -306,6 +300,16 @@
       week to week.</p>
       <div class="stack">Runs fully offline · encrypted on-device memory · early development</div>
     </div>
+    <div class="card">
+      <span class="tag">Founder · e-commerce · 2024 – 2026</span>
+      <h3 class="serif">RewindMods</h3>
+      <p>An international watch modification company I founded in August 2024
+      and ran solo for 2 years, modifying the Omega × Swatch MoonSwatch
+      in-house for the affordable-luxury gap. Product, marketing, web, sourcing,
+      fulfilment and bookkeeping, all one pair of hands. Wound down in 2026 as
+      I turned towards university.</p>
+      <div class="links"><a href="https://rewindmods.com" target="_blank" rel="noopener">rewindmods.com →</a></div>
+    </div>
   </div>
 </div></section>
 
@@ -314,7 +318,7 @@
   <div class="cards">
     <div class="card">
       <a class="shot" href="https://satradar-411.pages.dev" target="_blank" rel="noopener"><img src="images/projects/satradar.jpg" alt="SATRADAR showing around sixteen thousand satellites around a 3D Earth, with constellation filters on the left" loading="lazy"></a>
-      <span class="tag">Orbital mechanics</span>
+      <span class="tag">Orbital mechanics · best demo, Claude Founder House</span>
       <h3 class="serif">SATRADAR</h3>
       <p>Every active satellite in orbit, live in a browser tab. Each object is
       described by eight numbers; propagating all sixteen thousand of them takes
@@ -329,13 +333,13 @@
       <a class="shot" href="https://claudeusagemonitor.pages.dev" target="_blank" rel="noopener"><img src="images/projects/claude-usage.jpg" alt="Claude Usage deep-dive dashboard: token totals, tokens per day, activity heatmap and time-of-day chart" loading="lazy"></a>
       <span class="tag">Developer tools</span>
       <h3 class="serif">Claude Usage</h3>
+      <div class="badge" style="margin:4px 0 2px;"><span id="cu-downloads">150+</span> downloads</div>
       <p>A menu-bar app showing live Claude usage: the five-hour session window,
       weekly and per-model limits, with burn-rate projections and cost
       estimates. I built it because the alternative was refreshing a web page to
       find out whether I was going to run out halfway through a task.</p>
       <div class="stack">Electron · macOS menu bar · signs in once, runs at login · free</div>
       <div class="links"><a href="https://claudeusagemonitor.pages.dev" target="_blank" rel="noopener">claudeusagemonitor.pages.dev · download for Mac →</a></div>
-      <div class="stack"><b id="cu-downloads">155</b> downloads and counting</div>
     </div>
     <div class="card">
       <a class="shot" href="https://mvp-trialgalaxy.pages.dev" target="_blank" rel="noopener"><img src="images/projects/trialgalaxy.jpg" alt="trialgalaxy map of 40,084 clinical trials clustered by what they study, coloured by phase" loading="lazy"></a>
@@ -407,10 +411,10 @@
   </div>
   <div class="essay">
     <h3 class="serif">Claude Founder House</h3>
-    <div class="meta">September 2026 · showcase</div>
-    <p>Showcased the projects I've been building with Claude, including
-    SATRADAR, at the Claude Founder House event. Photos and a write-up to
-    follow.</p>
+    <div class="meta">September 2026 · demo · <span class="pill">Best demo</span></div>
+    <p>Demoed <a class="plain" href="#projects">SATRADAR</a>, my live satellite
+    tracker, to an audience of 300+ at Anthropic's Claude Founder House and won
+    best demo, with $1,000 in credits.</p>
   </div>
 </div></section>
 
@@ -544,7 +548,10 @@
   if (!el || !window.fetch) return;
   fetch('https://claudeusagemonitor.pages.dev/api/downloads')
     .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (d) { if (d && typeof d.count === 'number' && d.count > 0) el.textContent = d.count.toLocaleString('en-GB'); })
+    .then(function (d) {
+      // round down to the nearest ten so it reads "170+" rather than an exact tally
+      if (d && typeof d.count === 'number' && d.count >= 150) el.textContent = (Math.floor(d.count / 10) * 10).toLocaleString('en-GB') + '+';
+    })
     .catch(function () {});
 })();
 </script>
