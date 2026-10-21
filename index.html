@@ -6,11 +6,11 @@
 <meta name="color-scheme" content="light">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237a2e2e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23faf9f6'%3EE%3C/text%3E%3C/svg%3E">
 <title>Euan Brown · founder &amp; analyst, business × health</title>
-<meta name="description" content="Euan Brown: founder of RewindMods, Business and Health MSci at UCL. Healthtech, investing, consulting and the software I build along the way.">
+<meta name="description" content="Euan Brown: founder of RewindMods, Business and Health BSc at UCL. Healthtech, investing, consulting and the software I build along the way.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://euanbrown08.github.io/">
 <meta property="og:title" content="Euan Brown · business × health">
-<meta property="og:description" content="Founder of RewindMods, Business and Health MSci at UCL, ICAIF '26 author. Projects, research, writing and photography.">
+<meta property="og:description" content="Founder of RewindMods, Business and Health BSc at UCL, ICAIF '26 author. Projects, research, writing and photography.">
 <meta property="og:image" content="https://euanbrown08.github.io/images/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -120,6 +120,15 @@
     display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--accent);
     background: rgba(122, 46, 46, 0.07); border-radius: 6px; padding: 4px 10px;
   }
+  .exp { display: flex; gap: 16px; align-items: flex-start; }
+  .exp .logo {
+    flex: 0 0 44px; width: 44px; height: 44px; border-radius: 10px; margin-top: 2px;
+    background: var(--card); border: 1px solid var(--rule); overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .exp .logo img { width: 30px; height: 30px; object-fit: contain; }
+  .exp .logo.mono { background: var(--paper-2); font: 600 14px/1 Georgia, serif; color: var(--ink-soft); letter-spacing: 0.02em; }
+  .exp .body { flex: 1; min-width: 0; }
   .pill {
     display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
     color: var(--accent); border: 1px solid var(--accent); border-radius: 20px; padding: 1px 9px;
@@ -184,14 +193,14 @@
 <header class="hero"><div class="wrap">
   <div class="kicker">London · healthtech · investing · building</div>
   <h1 class="serif">From investment memos <br>to satellite trackers.</h1>
-  <p class="lede">I'm Euan Brown, a first-year Business and Health MSci student at UCL. I
+  <p class="lede">I'm Euan Brown, a first-year Business and Health BSc student at UCL. I
   founded and ran RewindMods, an international watch modification company, for
   2 years, and now I build projects people actually use, write about and analyse
   healthtech markets, and research how AI systems get hijacked, working towards
   a career in venture and impact investing.</p>
   <div class="facts">
     <span><b>Founder</b> · RewindMods, 2024 – 2026</span>
-    <span><b>MSci</b> · Business and Health, UCL</span>
+    <span><b>BSc</b> · Business and Health, UCL</span>
     <span><b>First-year rep</b> · UCL Asset Management</span>
     <span><b>Latest</b> · <a class="plain" href="#research">paper accepted at ICAIF '26</a></span>
     <span><b>Best demo</b> · <a class="plain" href="#speaking">Claude Founder House</a></span>
@@ -201,28 +210,35 @@
 <section class="block" id="experience"><div class="wrap">
   <div class="label">Experience</div>
   <div class="essay" style="padding-top:6px;">
+    <div class="exp"><div class="logo"><img src="images/logos/laconia.vc.png" alt="Laconia Capital"></div><div class="body">
     <h3 class="serif">Venture Cooperative · Laconia Capital</h3>
     <div class="meta">2026 – present · Venture Fellow, Cohort 11 · New York, remote <span class="pill">Now</span></div>
     <p>A fellowship run with Laconia Capital: weekly sessions on the legal,
     financial and portfolio-construction sides of venture capital, plus Laconia
     office hours. I help source early-stage startups for Laconia's pipeline,
     focusing on AI in healthcare.</p>
+    </div></div>
   </div>
   <div class="essay">
+    <div class="exp"><div class="logo"><img src="images/logos/ucl.ac.uk.png" alt="UCL"></div><div class="body">
     <h3 class="serif">UCL Asset Management · First-Year Representative</h3>
     <div class="meta">2026 – present · student investment society <span class="pill">Now</span></div>
     <p>Representing first-year members of UCL Asset Management, the
     university's student investment society.</p>
+    </div></div>
   </div>
   <div class="essay">
+    <div class="exp"><div class="logo mono" aria-hidden="true">AI</div><div class="body">
     <h3 class="serif">Freelance · AI Evaluation &amp; Analysis</h3>
     <div class="meta">2026 – present · multiple AI research platforms <span class="pill">Now</span></div>
     <p>Designing financial-planning assessment scenarios, with full input
     datasets and grading rubrics, to benchmark large language models, and
     evaluating AI-generated code against real-world quantitative trading
     repositories.</p>
+    </div></div>
   </div>
   <div class="essay">
+    <div class="exp"><div class="logo"><img src="images/logos/neurealities.com.png" alt="neuRealities"></div><div class="body">
     <h3 class="serif">neuRealities · Edtech &amp; Healthtech</h3>
     <div class="meta">2026 · product &amp; building</div>
     <p>Started by sitting in on how the company takes an idea from concept to
@@ -232,8 +248,10 @@
     <a class="plain" href="#satquest">SAT Quest</a>, an SAT study app, covering
     the design, the question logic and the study features, scoped to get every
     core feature working for the first MVP review.</p>
+    </div></div>
   </div>
   <div class="essay">
+    <div class="exp"><div class="logo"><img src="images/logos/axa.com.png" alt="AXA"></div><div class="body">
     <h3 class="serif">AXA Investment Managers · Impact Global Health</h3>
     <div class="meta">2025 · impact venture investing</div>
     <p>Worked with the Global Health impact team, taking calls with
@@ -242,30 +260,38 @@
     biotech company to a panel of senior healthcare investors, and produced
     disease-burden research packs on osteoarthritis and cardiovascular
     disease.</p>
+    </div></div>
   </div>
   <div class="essay">
+    <div class="exp"><div class="logo"><img src="images/logos/lek.com.png" alt="L.E.K. Consulting"></div><div class="body">
     <h3 class="serif">L.E.K. Consulting · Commercial Due Diligence</h3>
     <div class="meta">2025 · consulting</div>
     <p>Supported a live commercial due diligence project, modelling 15 years
     of market share data across two countries, synthesising industry expert
     interviews and presenting findings in update meetings.</p>
+    </div></div>
   </div>
   <div class="essay">
+    <div class="exp"><div class="logo"><img src="images/logos/bnpparibas.com.png" alt="BNP Paribas"></div><div class="body">
     <h3 class="serif">BNP Paribas · Equities</h3>
     <div class="meta">2024 · markets</div>
     <p>Sector analysis and equity research exposure. Ran long and short
     strategies in a live stock market simulation with £100,000 of virtual
     capital, growing the book by 8% and placing first in the cohort, and
     delivered a stock pitch to senior employees.</p>
+    </div></div>
   </div>
   <div class="essay">
+    <div class="exp"><div class="logo mono" aria-hidden="true">CC</div><div class="body">
     <h3 class="serif">Coleman Capital · Family Office / Hedge Fund</h3>
     <div class="meta">2024 · investing</div>
     <p>Worked alongside portfolio managers and market strategists, learning
     hedge fund operations, debt trading and the risk frameworks used by family
     offices and institutional investors.</p>
+    </div></div>
   </div>
   <div class="essay">
+    <div class="exp"><div class="logo mono" aria-hidden="true">AG</div><div class="body">
     <h3 class="serif">Arbitrage Group · Short-let Property</h3>
     <div class="meta">2026 · real estate operations</div>
     <p>Helped get properties ready for guests, seeing the operational side of
@@ -273,6 +299,7 @@
     across Airbnb and Booking.com, grouped guest complaints by theme rather than
     by property to surface the problems that kept recurring, and turned them
     into low-cost recommendations to lift ratings.</p>
+    </div></div>
   </div>
   <p style="font-size:13.5px; margin-top:18px;">Also: team coordinator for the
   UK &amp; Europe Restructuring Competition (finals at Imperial College London,
