@@ -4,9 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Unflagged and Obeyed · ICAIF '26 · Euan Brown</title>
-<!-- Keeps this page out of Google while it's being written. Delete this line when it's ready. -->
-<meta name="robots" content="noindex">
-<meta name="description" content="Unflagged and Obeyed: Prompt Injection Through Small Models in LLM Financial Pipelines. ICAIF '26 workshop paper by Euan Brown.">
+<meta name="description" content="Unflagged and Obeyed: Prompt Injection Through Small Models in LLM Financial Pipelines. Euan Brown, University College London. Poster at the ICAIF '26 Workshop on Financial AI Security, Privacy, and Safety, Milan.">
+<link rel="canonical" href="https://euanbrown08.github.io/icaif-paper/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://euanbrown08.github.io/icaif-paper/">
+<meta property="og:title" content="Unflagged and Obeyed: Prompt Injection Through Small Models in LLM Financial Pipelines">
+<meta property="og:description" content="One planted sentence, six low-cost AI models: did they notice? Paper and poster by Euan Brown (UCL), ICAIF '26 Workshop on Financial AI Security, Privacy, and Safety, Milan.">
+<meta name="image" property="og:image" content="https://euanbrown08.github.io/icaif-paper/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="citation_title" content="Unflagged and Obeyed: Prompt Injection Through Small Models in LLM Financial Pipelines">
+<meta name="citation_author" content="Brown, Euan">
+<meta name="citation_author_institution" content="University College London">
+<meta name="citation_publication_date" content="2026/11/15">
+<meta name="citation_conference_title" content="ICAIF '26 Workshop on Financial AI Security, Privacy, and Safety">
+<meta name="citation_pdf_url" content="https://euanbrown08.github.io/icaif-paper/unflagged-and-obeyed-icaif2026.pdf">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237a2e2e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23faf9f6'%3EE%3C/text%3E%3C/svg%3E">
 <style>
   /* A paper page: white, narrow, typeset like a preprint rather than the
@@ -16,6 +29,7 @@
     --soft: #5b5f66;
     --rule: #e6e6e6;
     --accent: #7a2e2e;
+    --sans: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   }
   * { box-sizing: border-box; margin: 0; }
   body {
@@ -24,41 +38,69 @@
   }
   .top {
     max-width: 760px; margin: 0 auto; padding: 18px 20px;
-    display: flex; justify-content: space-between; align-items: center;
-    font: 13px/1 -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    font: 13px/1.3 var(--sans);
   }
   .top a { color: var(--soft); text-decoration: none; }
   .top a:hover { color: var(--ink); }
-  .top .venue { color: var(--accent); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 11.5px; }
+  .top .venue { color: var(--accent); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 11.5px; text-align: right; }
 
-  main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
   header { text-align: center; padding-bottom: 36px; border-bottom: 1px solid var(--rule); }
   h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.2; font-weight: 600; letter-spacing: -0.01em; }
   .author { margin-top: 18px; font-size: 18px; }
   .author a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
   .affil { color: var(--soft); font-size: 15px; margin-top: 2px; }
-  .meta {
-    margin-top: 16px; color: var(--soft);
-    font: 13.5px/1.6 -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  }
+  .meta { margin-top: 16px; color: var(--soft); font: 13.5px/1.6 var(--sans); }
   .buttons { margin-top: 22px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
   .btn {
-    font: 600 14px/1 -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    padding: 10px 16px; border-radius: 6px; border: 1px solid var(--ink);
-    color: var(--ink); text-decoration: none;
+    font: 600 14px/1 var(--sans); padding: 11px 18px; border-radius: 6px;
+    border: 1px solid var(--ink); color: var(--ink); text-decoration: none; background: #fff;
   }
-  .btn.disabled { border-color: var(--rule); color: #aaa; pointer-events: none; }
+  .btn:hover { background: #f5f5f5; }
+  .btn.primary { background: var(--ink); color: #fff; }
+  .btn.primary:hover { background: #333; }
 
-  section { padding-top: 40px; }
+  section { padding-top: 44px; }
   h2 {
-    font: 600 12px/1 -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+    font: 600 12px/1 var(--sans); letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 16px;
   }
-  .empty { color: #b3b3b3; font-style: italic; }
+  .abstract { text-align: left; }
+  @media (min-width: 640px) { .abstract { text-align: justify; hyphens: auto; } }
+  .findings { list-style: none; padding: 0; }
+  .findings li { padding: 14px 0 14px 22px; border-top: 1px solid var(--rule); position: relative; }
+  .findings li:first-child { border-top: 0; padding-top: 0; }
+  .findings li::before {
+    content: ""; position: absolute; left: 0; top: 25px; width: 8px; height: 8px;
+    border-radius: 50%; background: var(--accent);
+  }
+  .findings li:first-child::before { top: 11px; }
+  .findings b { font-weight: 600; }
+  .findings .takeaway { background: #faf6f5; border: 1px solid #ecdcd8; border-radius: 8px; padding: 14px 18px; margin-top: 8px; }
+  .findings .takeaway::before { display: none; }
+
+  .poster { display: block; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+  .poster img { display: block; width: 100%; height: auto; }
+  .caption { font: 13px/1.5 var(--sans); color: var(--soft); margin-top: 10px; text-align: center; }
+  .caption a { color: var(--ink); }
+
+  .cite { position: relative; }
+  pre {
+    background: #f7f7f7; border: 1px solid var(--rule); border-radius: 6px;
+    padding: 18px 20px; overflow-x: auto; font: 13px/1.6 ui-monospace, Menlo, Consolas, monospace;
+  }
+  .copy {
+    position: absolute; top: 10px; right: 10px; font: 600 12px/1 var(--sans);
+    padding: 7px 10px; border-radius: 5px; border: 1px solid var(--rule); background: #fff;
+    color: var(--ink); cursor: pointer;
+  }
+  .copy:hover { border-color: var(--ink); }
+  .note { font: 13.5px/1.6 var(--sans); color: var(--soft); margin-top: 12px; }
 
   footer {
     max-width: 760px; margin: 0 auto; padding: 24px 20px 48px; border-top: 1px solid var(--rule);
-    font: 13px/1.6 -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--soft);
+    font: 13px/1.6 var(--sans); color: var(--soft);
   }
   footer a { color: var(--ink); }
 </style>
@@ -67,7 +109,7 @@
 
 <div class="top">
   <a href="/">← Euan Brown</a>
-  <span class="venue">ICAIF '26 · Workshop paper</span>
+  <span class="venue">ICAIF '26 · Workshop poster</span>
 </div>
 
 <main>
@@ -75,30 +117,49 @@
     <h1>Unflagged and Obeyed: Prompt Injection Through Small Models in LLM Financial Pipelines</h1>
     <p class="author"><a href="/">Euan Brown</a></p>
     <p class="affil">University College London</p>
-    <p class="meta">Financial AI Security, Privacy, and Safety workshop · ICAIF '26, the ACM International Conference on AI in Finance · Milan, 15 November 2026</p>
-    <!-- Swap href="#" for the real links and remove class "disabled" when each one is ready. -->
+    <p class="meta">Poster at the ICAIF '26 Workshop on Financial AI Security, Privacy, and Safety (ACM ICAIF 2026) · Bocconi University, Milan · 15 November 2026 · non-archival</p>
     <div class="buttons">
-      <a class="btn disabled" href="#">Paper (PDF)</a>
-      <a class="btn disabled" href="#">Poster</a>
-      <a class="btn disabled" href="#">Code</a>
+      <a class="btn primary" href="unflagged-and-obeyed-icaif2026.pdf">Paper (PDF)</a>
+      <a class="btn" href="unflagged-and-obeyed-poster.pdf">Poster (PDF)</a>
+      <a class="btn" href="#cite">Cite</a>
     </div>
   </header>
 
-  <!-- ===== Write the page below. Each section is ready to fill in. ===== -->
-
   <section id="abstract">
     <h2>Abstract</h2>
-    <p class="empty">Coming soon.</p>
+    <p class="abstract">Financial firms let language models read documents they do not control—earnings transcripts, investor-relations pages, news—and may give that first reading to a small, low-cost model whose output feeds a larger model, an analyst or an agent. We plant one sentence urging a Strong Buy (or Strong Sell) in such documents and test six low-cost chat models on a stock-rating task, with synthetic companies whose quality is known by construction (18,630 calls, plus 2,550 in follow-up controls analysed to plans fixed before collection). Susceptibility differs sharply between models of the same low-cost tier: on earnings transcripts the same sentence led Qwen2.5-7B to rate every weak company Strong Buy and the two Gemini models none. The model’s own suspicion flag is not a reliable control by itself. On transcripts, a pipeline trusting every unflagged output would have passed all 120, 130 and 74 manipulated ratings from three of the six models. The attacker need not be the company: in exploratory news-page tests, one anonymous reader comment raised GPT-4.1-nano’s rating of every strong company, unflagged, and changing only who a quoted directive is credited to turns GPT-4o-mini’s flag on strong companies from 30 of 30 rounds to 0 while the rating still rises. When GPT-4.1-nano writes a short note on an injected transcript, it drops the instruction and adopts its conclusion, and Gemini-3.1-Flash-Lite, which resists the transcript itself, is moved by the note without flagging it; a current OpenAI flagship, GPT-6 Sol, is not: it cites the real figures the note still carries and declines its verdict. An added prompt rule telling the model never to follow instructions in the document did not stop GPT-4.1-nano or Qwen2.5-7B, nor reliably reduce the shift of the other two models tested. The practical conclusion is to red-team every model that reads untrusted text, the small ones upstream included, and not to rely on its flag or its prompt as the control. The threat model carries over to fraud, anti-money-laundering and payment screening, where the party being assessed can write the text and a flag can decide which cases reach a reviewer; we did not test those services. We outline a black-box test a governance function can require and report three measurement traps.</p>
   </section>
 
   <section id="findings">
     <h2>Key findings</h2>
-    <p class="empty">Coming soon.</p>
+    <ul class="findings">
+      <li><b>The flag misses the manipulation that works.</b> On earnings transcripts, for three of the six models the “suspicious content” flag missed every rating the planted sentence moved.</li>
+      <li><b>The attacker doesn’t have to be the company.</b> On news pages, one anonymous reader comment raised GPT-4.1-nano’s rating of every strong company, unflagged.</li>
+      <li><b>Who is credited switches the flag.</b> Crediting the same directive to a reader instead of the company turned GPT-4o-mini’s flag from 30 of 30 rounds to 0, while its rating still rose (exploratory).</li>
+      <li><b>A small model’s summary carries the verdict onward.</b> GPT-4.1-nano’s note dropped the instruction but kept its conclusion, and moved Gemini-3.1-Flash-Lite, which had resisted the original document. GPT-6 Sol, a flagship model, was not moved.</li>
+      <li class="takeaway"><b>Takeaway:</b> red-team every model that reads untrusted text, the small ones upstream included, and don’t rely on a model’s own flag or a prompt rule as the control.</li>
+    </ul>
+  </section>
+
+  <section id="poster">
+    <h2>Poster</h2>
+    <a class="poster" href="unflagged-and-obeyed-poster.pdf"><img src="poster.jpg" width="849" height="1200" alt="A0 poster for Unflagged and Obeyed: summary, threat model, experimental setup, four results and implications for practice" loading="lazy"></a>
+    <p class="caption">Presented at Bocconi University, Milan, on 15 November 2026. <a href="unflagged-and-obeyed-poster.pdf">Full-resolution PDF</a></p>
   </section>
 
   <section id="cite">
     <h2>Cite</h2>
-    <p class="empty">Coming soon.</p>
+    <div class="cite">
+      <button class="copy" type="button">Copy</button>
+<pre id="bibtex">@misc{brown2026unflagged,
+  title  = {Unflagged and Obeyed: Prompt Injection Through Small Models in LLM Financial Pipelines},
+  author = {Brown, Euan},
+  year   = {2026},
+  note   = {Poster, ICAIF '26 Workshop on Financial AI Security, Privacy, and Safety, Milan},
+  howpublished = {\url{https://euanbrown08.github.io/icaif-paper/}}
+}</pre>
+    </div>
+    <p class="note">Questions about the paper: <a href="mailto:euan.brown.26@ucl.ac.uk">euan.brown.26@ucl.ac.uk</a> · <a href="https://www.linkedin.com/in/euan-brown-eb08">LinkedIn</a></p>
   </section>
 </main>
 
@@ -106,5 +167,17 @@
   <a href="/">euanbrown08.github.io</a> · <a href="/#research">More research</a>
 </footer>
 
+<script>
+  (function () {
+    var b = document.querySelector('.copy'), pre = document.getElementById('bibtex');
+    if (!b || !navigator.clipboard) { if (b) b.style.display = 'none'; return; }
+    b.addEventListener('click', function () {
+      navigator.clipboard.writeText(pre.textContent).then(function () {
+        b.textContent = 'Copied';
+        setTimeout(function () { b.textContent = 'Copy'; }, 1600);
+      }).catch(function () {});
+    });
+  })();
+</script>
 </body>
 </html>
