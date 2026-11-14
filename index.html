@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237a2e2e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23faf9f6'%3EE%3C/text%3E%3C/svg%3E">
-<title>Euan Brown · founder &amp; analyst, business × health</title>
+<title>Euan Brown · business × healthtech</title>
 <meta name="description" content="Euan Brown: founder of RewindMods, Business and Health BSc at UCL. Healthtech, investing, consulting and the software I build along the way.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://euanbrown08.github.io/">
-<meta property="og:title" content="Euan Brown · business × health">
+<meta property="og:title" content="Euan Brown · business × healthtech">
 <meta property="og:description" content="Founder of RewindMods, Business and Health BSc at UCL, ICAIF '26 author. Projects, research, writing and photography.">
 <meta property="og:image" content="https://euanbrown08.github.io/images/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -55,6 +55,16 @@
   .hero p.lede { margin-top: 22px; font-size: 19px; color: var(--ink-soft); max-width: 620px; }
   .hero .facts { margin-top: 30px; display: flex; gap: 26px; flex-wrap: wrap; font-size: 13.5px; color: var(--ink-soft); }
   .hero .facts span b { color: var(--ink); font-weight: 600; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 48px; align-items: center; }
+  .hero-grid h1 { font-size: clamp(34px, 5vw, 50px); text-wrap: balance; }
+  .headshot {
+    width: 260px; height: 260px; border-radius: 50%; object-fit: cover; display: block;
+    border: 1px solid var(--rule); box-shadow: 0 10px 30px rgba(20, 32, 46, 0.10);
+  }
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 22px; }
+    .headshot { order: -1; width: 112px; height: 112px; }
+  }
 
   section.block { padding: 58px 0; border-bottom: 1px solid var(--rule); }
   .label {
@@ -190,9 +200,10 @@
   <a href="#contact">Contact</a>
 </div></nav>
 
-<header class="hero"><div class="wrap">
-  <div class="kicker">London · healthtech · investing · building</div>
-  <h1 class="serif">From investment memos <br>to satellite trackers.</h1>
+<header class="hero"><div class="wrap hero-grid">
+  <div class="hero-text">
+  <div class="kicker">London · business &amp; healthtech · investing · building</div>
+  <h1 class="serif">From investment memos to satellite trackers.</h1>
   <p class="lede">I'm Euan Brown, a first-year Business and Health BSc student at UCL. I
   founded and ran RewindMods, an international watch modification company, for
   2 years, and now I build projects people actually use, write about and analyse
@@ -202,9 +213,10 @@
     <span><b>Founder</b> · RewindMods, 2024 – 2026</span>
     <span><b>BSc</b> · Business and Health, UCL</span>
     <span><b>First-year rep</b> · UCL Asset Management</span>
-    <span><b>Latest</b> · <a class="plain" href="icaif-paper/">paper accepted at ICAIF '26</a></span>
-    <span><b>Best demo</b> · <a class="plain" href="#speaking">Claude Founder House</a></span>
+    <span><b>Latest</b> · <a class="plain" href="icaif-paper/">poster at ICAIF 2026</a></span>
   </div>
+  </div>
+  <img class="headshot" src="images/euan.jpg" srcset="images/euan-small.jpg 320w, images/euan.jpg 640w" sizes="(max-width: 760px) 112px, 260px" width="640" height="640" alt="Euan Brown">
 </div></header>
 
 <section class="block" id="experience"><div class="wrap">
@@ -220,7 +232,7 @@
     </div></div>
   </div>
   <div class="essay">
-    <div class="exp"><div class="logo"><img src="images/logos/ucl.ac.uk.png" alt="UCL"></div><div class="body">
+    <div class="exp"><div class="logo"><img src="images/logos/uclam.png" alt="UCL Asset Management"></div><div class="body">
     <h3 class="serif">UCL Asset Management · First-Year Representative</h3>
     <div class="meta">2026 – present · student investment society <span class="pill">Now</span></div>
     <p>Representing first-year members of UCL Asset Management, the
@@ -235,19 +247,6 @@
     datasets and grading rubrics, to benchmark large language models, and
     evaluating AI-generated code against real-world quantitative trading
     repositories.</p>
-    </div></div>
-  </div>
-  <div class="essay">
-    <div class="exp"><div class="logo"><img src="images/logos/neurealities.com.png" alt="neuRealities"></div><div class="body">
-    <h3 class="serif">neuRealities · Edtech &amp; Healthtech</h3>
-    <div class="meta">2026 · product &amp; building</div>
-    <p>Started by sitting in on how the company takes an idea from concept to
-    build, alongside its 3D designers and business leads, and how the creative
-    and commercial sides have to line up before anything gets made. Then I was
-    given a week to build an edtech app from scratch:
-    <a class="plain" href="#satquest">SAT Quest</a>, an SAT study app, covering
-    the design, the question logic and the study features, scoped to get every
-    core feature working for the first MVP review.</p>
     </div></div>
   </div>
   <div class="essay">
@@ -282,7 +281,7 @@
     </div></div>
   </div>
   <div class="essay">
-    <div class="exp"><div class="logo mono" aria-hidden="true">CC</div><div class="body">
+    <div class="exp"><div class="logo"><img src="images/logos/coleman.png" alt="Coleman Capital"></div><div class="body">
     <h3 class="serif">Coleman Capital · Family Office / Hedge Fund</h3>
     <div class="meta">2024 · investing</div>
     <p>Worked alongside portfolio managers and market strategists, learning
@@ -291,7 +290,20 @@
     </div></div>
   </div>
   <div class="essay">
-    <div class="exp"><div class="logo mono" aria-hidden="true">AG</div><div class="body">
+    <div class="exp"><div class="logo"><img src="images/logos/neurealities.com.png" alt="neuRealities"></div><div class="body">
+    <h3 class="serif">neuRealities · Edtech &amp; Healthtech</h3>
+    <div class="meta">2026 · product &amp; building</div>
+    <p>Started by sitting in on how the company takes an idea from concept to
+    build, alongside its 3D designers and business leads, and how the creative
+    and commercial sides have to line up before anything gets made. Then I was
+    given a week to build an edtech app from scratch:
+    <a class="plain" href="#satquest">SAT Quest</a>, an SAT study app, covering
+    the design, the question logic and the study features, scoped to get every
+    core feature working for the first MVP review.</p>
+    </div></div>
+  </div>
+  <div class="essay">
+    <div class="exp"><div class="logo"><img src="images/logos/arbitrage.png" alt="Arbitrage Group"></div><div class="body">
     <h3 class="serif">Arbitrage Group · Short-let Property</h3>
     <div class="meta">2026 · real estate operations</div>
     <p>Helped get properties ready for guests, seeing the operational side of
@@ -301,9 +313,6 @@
     into low-cost recommendations to lift ratings.</p>
     </div></div>
   </div>
-  <p style="font-size:13.5px; margin-top:18px;">Also: team coordinator for the
-  UK &amp; Europe Restructuring Competition (finals at Imperial College London,
-  March 2026), and The American School in London, Class of 2026.</p>
 </div></section>
 
 <section class="block" id="ventures"><div class="wrap">
@@ -420,11 +429,12 @@
   </div>
   <div class="soon" style="margin-top:16px;">
     <span class="tag">Sister paper · in progress</span>
-    <h3 class="serif">Making small models robust to prompt injection</h3>
-    <p>The follow-up: practical ways to make smaller models harder to hijack.
-    The argument behind both papers is simple. Every model can be injected, big
-    or small, so guardrails should be standard practice in any AI system rather
-    than an afterthought.</p>
+    <h3 class="serif">A framework for limiting prompt injection</h3>
+    <p>Building on the findings of Unflagged and Obeyed, I'm working on a
+    framework to lessen the impact of prompt injection on AI systems, big models
+    and small. The argument behind both papers is simple: every model can be
+    injected, so guardrails should be standard practice rather than an
+    afterthought.</p>
   </div>
 </div></section>
 
@@ -432,10 +442,11 @@
   <div class="label">Speaking &amp; showcases</div>
   <div class="essay" style="padding-top:6px;">
     <h3 class="serif">ICAIF '26 · ACM International Conference on AI in Finance</h3>
-    <div class="meta">15 November 2026 · poster · Milan <span class="pill">Upcoming</span></div>
-    <p>Presenting <a class="plain" href="icaif-paper/">Unflagged and Obeyed</a>, my
-    paper on prompt injection through small models in financial pipelines, at
-    the Financial AI Security, Privacy, and Safety workshop.</p>
+    <div class="meta">15 November 2026 · poster · Bocconi University, Milan</div>
+    <p>Poster presentation of <a class="plain" href="icaif-paper/">Unflagged and Obeyed</a>,
+    my paper on prompt injection through small models in financial pipelines, at
+    the Financial AI Security, Privacy, and Safety workshop.
+    <a class="plain" href="icaif-paper/">Paper and poster</a></p>
   </div>
   <div class="essay">
     <h3 class="serif">Claude Founder House</h3>
@@ -443,6 +454,13 @@
     <p>Demoed <a class="plain" href="#projects">SATRADAR</a>, my live satellite
     tracker, to an audience of 300+ at Anthropic's Claude Founder House and won
     best demo, with $1,000 in credits.</p>
+  </div>
+  <div class="essay">
+    <h3 class="serif">UCL Business Games</h3>
+    <div class="meta">2026 · case competition &amp; ideathon</div>
+    <p>Competed in the UCL Business Games, part case competition and part
+    ideathon: working in a team to take a business problem from a blank page
+    to a pitched solution against the clock.</p>
   </div>
 </div></section>
 
